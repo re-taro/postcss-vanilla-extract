@@ -1,0 +1,66 @@
+{
+  "name": "@re-taro/postcss-vanilla-extract",
+  "description": "PostCSS custom syntax for vanilla-extract",
+  "version": "0.1.0",
+  "packageManager": "pnpm@8.10.2",
+  "license": "MIT",
+  "author": {
+    "name": "Rintaro Itokawa",
+    "email": "me@re-taro.dev",
+    "url": "https://re-taro.dev"
+  },
+  "homepage": "https://github.com/re-taro/postcss-vanilla-extract#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/re-taro/postcss-vanilla-extract.git"
+  },
+  "bugs": {
+    "url": "https://github.com/re-taro/postcss-vanilla-extract/issues"
+  },
+  "keywords": [
+    "postcss",
+    "vanilla-extract",
+    "custom-syntax"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "lint": "eslint . && prettier . --check",
+    "lint:fix": "eslint . --fix && prettier . --write",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@babel/parser": "7.23.0",
+    "@babel/traverse": "7.23.2"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "0.4.8",
+    "@changesets/cli": "2.26.2",
+    "@re-taro/eslint-config": "2.2.0",
+    "@rollup/plugin-replace": "5.0.5",
+    "@rollup/plugin-terser": "0.4.4",
+    "@rollup/plugin-typescript": "11.1.5",
+    "eslint": "8.52.0",
+    "prettier": "3.0.3",
+    "rollup": "4.2.0",
+    "terser": "5.24.0",
+    "typescript": "5.2.2",
+    "vitest": "0.34.6"
+  }
+}
