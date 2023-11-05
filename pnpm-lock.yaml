@@ -7,13 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      '@babel/parser':
-        specifier: 7.23.0
-        version: 7.23.0
-      '@babel/traverse':
-        specifier: 7.23.2
-        version: 7.23.2
     devDependencies:
       '@changesets/changelog-github':
         specifier: 0.4.8
