@@ -7,6 +7,6 @@ export default re_taro(
     },
   },
   {
-    ignores: ["rollup.config.mjs", "vitest.config.ts"],
-  }
+    ignores: ["**/rollup.config.mjs"],
+  },
 );
