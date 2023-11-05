@@ -4,51 +4,58 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-dependencies:
-  '@babel/parser':
-    specifier: 7.23.0
-    version: 7.23.0
-  '@babel/traverse':
-    specifier: 7.23.2
-    version: 7.23.2
+importers:
 
-devDependencies:
-  '@changesets/changelog-github':
-    specifier: 0.4.8
-    version: 0.4.8
-  '@changesets/cli':
-    specifier: 2.26.2
-    version: 2.26.2
-  '@re-taro/eslint-config':
-    specifier: 2.2.0
-    version: 2.2.0(eslint-plugin-import@2.29.0)(eslint@8.52.0)(prettier@3.0.3)(svelte@4.2.2)(typescript@5.2.2)(vitest@0.34.6)
-  '@rollup/plugin-replace':
-    specifier: 5.0.5
-    version: 5.0.5(rollup@4.2.0)
-  '@rollup/plugin-terser':
-    specifier: 0.4.4
-    version: 0.4.4(rollup@4.2.0)
-  '@rollup/plugin-typescript':
-    specifier: 11.1.5
-    version: 11.1.5(rollup@4.2.0)(typescript@5.2.2)
-  eslint:
-    specifier: 8.52.0
-    version: 8.52.0
-  prettier:
-    specifier: 3.0.3
-    version: 3.0.3
-  rollup:
-    specifier: 4.2.0
-    version: 4.2.0
-  terser:
-    specifier: 5.24.0
-    version: 5.24.0
-  typescript:
-    specifier: 5.2.2
-    version: 5.2.2
-  vitest:
-    specifier: 0.34.6
-    version: 0.34.6(terser@5.24.0)
+  .:
+    devDependencies:
+      '@changesets/changelog-github':
+        specifier: 0.4.8
+        version: 0.4.8
+      '@changesets/cli':
+        specifier: 2.26.2
+        version: 2.26.2
+      '@re-taro/eslint-config':
+        specifier: 2.2.0
+        version: 2.2.0(eslint-plugin-import@2.29.0)(eslint@8.52.0)(prettier@3.0.3)(svelte@4.2.2)(typescript@5.2.2)(vitest@0.34.6)
+      '@rollup/plugin-replace':
+        specifier: 5.0.5
+        version: 5.0.5(rollup@4.2.0)
+      '@rollup/plugin-terser':
+        specifier: 0.4.4
+        version: 0.4.4(rollup@4.2.0)
+      '@rollup/plugin-typescript':
+        specifier: 11.1.5
+        version: 11.1.5(rollup@4.2.0)(typescript@5.2.2)
+      eslint:
+        specifier: 8.52.0
+        version: 8.52.0
+      prettier:
+        specifier: 3.0.3
+        version: 3.0.3
+      rollup:
+        specifier: 4.2.0
+        version: 4.2.0
+      terser:
+        specifier: 5.24.0
+        version: 5.24.0
+      turbo:
+        specifier: 1.10.16
+        version: 1.10.16
+      typescript:
+        specifier: 5.2.2
+        version: 5.2.2
+      vitest:
+        specifier: 0.34.6
+        version: 0.34.6(terser@5.24.0)
+
+  packages/postcss-vanilla-extract:
+    dependencies:
+      '@babel/parser':
+        specifier: 7.23.0
+        version: 7.23.0
+      '@babel/traverse':
+        specifier: 7.23.2
+        version: 7.23.2
 
 packages:
 
@@ -6221,6 +6228,66 @@ packages:
     resolution: {integrity: sha512-McnNiV1l8RYeY8tBgEpuodCC1mLUdbSN+CYBL7kJsJNInOP8UjDDEwdk6Mw60vdLLrr5NHKZhMAOSrR2NZuQ+w==}
     dependencies:
       safe-buffer: 5.2.1
+    dev: true
+
+  /turbo-darwin-64@1.10.16:
+    resolution: {integrity: sha512-+Jk91FNcp9e9NCLYlvDDlp2HwEDp14F9N42IoW3dmHI5ZkGSXzalbhVcrx3DOox3QfiNUHxzWg4d7CnVNCuuMg==}
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /turbo-darwin-arm64@1.10.16:
+    resolution: {integrity: sha512-jqGpFZipIivkRp/i+jnL8npX0VssE6IAVNKtu573LXtssZdV/S+fRGYA16tI46xJGxSAivrZ/IcgZrV6Jk80bw==}
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /turbo-linux-64@1.10.16:
+    resolution: {integrity: sha512-PpqEZHwLoizQ6sTUvmImcRmACyRk9EWLXGlqceogPZsJ1jTRK3sfcF9fC2W56zkSIzuLEP07k5kl+ZxJd8JMcg==}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /turbo-linux-arm64@1.10.16:
+    resolution: {integrity: sha512-TMjFYz8to1QE0fKVXCIvG/4giyfnmqcQIwjdNfJvKjBxn22PpbjeuFuQ5kNXshUTRaTJihFbuuCcb5OYFNx4uw==}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /turbo-windows-64@1.10.16:
+    resolution: {integrity: sha512-+jsf68krs0N66FfC4/zZvioUap/Tq3sPFumnMV+EBo8jFdqs4yehd6+MxIwYTjSQLIcpH8KoNMB0gQYhJRLZzw==}
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /turbo-windows-arm64@1.10.16:
+    resolution: {integrity: sha512-sKm3hcMM1bl0B3PLG4ifidicOGfoJmOEacM5JtgBkYM48ncMHjkHfFY7HrJHZHUnXM4l05RQTpLFoOl/uIo2HQ==}
+    cpu: [arm64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /turbo@1.10.16:
+    resolution: {integrity: sha512-2CEaK4FIuSZiP83iFa9GqMTQhroW2QryckVqUydmg4tx78baftTOS0O+oDAhvo9r9Nit4xUEtC1RAHoqs6ZEtg==}
+    hasBin: true
+    optionalDependencies:
+      turbo-darwin-64: 1.10.16
+      turbo-darwin-arm64: 1.10.16
+      turbo-linux-64: 1.10.16
+      turbo-linux-arm64: 1.10.16
+      turbo-windows-64: 1.10.16
+      turbo-windows-arm64: 1.10.16
     dev: true
 
   /type-check@0.4.0:

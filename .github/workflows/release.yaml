@@ -1,0 +1,41 @@
+name: Release
+
+on:
+  workflow_call:
+    secrets:
+      NPM_TOKEN:
+        required: true
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      matrix:
+        include:
+          - name: npm
+            url: https://registry.npmjs.org/
+          - name: GitHub Packages
+            url: https://npm.pkg.github.com/
+    steps:
+      - name: Setup | Checkout
+        uses: actions/checkout@v4.1.1
+      - name: Setup | Node.js
+        uses: re-taro/actions/setup-node@v3.4.1
+        with:
+          node-version-file: .tool-versions
+      - name: Setup | Registry
+        uses: actions/setup-node@v4.0.0
+        with:
+          registry-url: ${{ matrix.url }}
+      - name: Publish | Build
+        run: pnpm build
+      - name: Publish | ${{ matrix.name }}
+        run: pnpm publish -r --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ matrix.name == 'npm' && secrets.NPM_TOKEN || secrets.GITHUB_TOKEN }}
