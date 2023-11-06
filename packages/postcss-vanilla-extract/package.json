@@ -26,10 +26,12 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs"
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
     }
   },
   "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "sideEffects": false,
   "files": [
@@ -47,5 +49,12 @@
   "dependencies": {
     "@babel/parser": "7.23.6",
     "@babel/traverse": "7.23.7"
+  },
+  "peerDependencies": {
+    "postcss": "^8.4.21"
+  },
+  "devDependencies": {
+    "@babel/types": "7.23.0",
+    "@types/babel__traverse": "7.20.3"
   }
 }
