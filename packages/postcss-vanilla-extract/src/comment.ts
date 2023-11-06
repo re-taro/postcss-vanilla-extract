@@ -1,26 +1,36 @@
 import type { NodePath } from "@babel/traverse";
 import type { CallExpression, Comment } from "@babel/types";
 
+import type { SyntaxOptions } from "./types";
+
 /**
  * Determines if a given comment is a postcss-lit-disable comment
  * @param {Comment} node Node to test
+ * @param {SyntaxOptions} options Syntax options
  * @return {boolean}
  */
-export const isDisableComment = (node: Comment): boolean =>
+export const isDisableComment = (
+  node: Comment,
+  options: SyntaxOptions,
+): boolean =>
   node.type === "CommentLine" &&
-  node.value.includes("postcss-vanilla-extract-disable-next-line");
+  node.value.includes(`postcss-${options.id}-disable-next-line`);
 
 /**
  * Determines if a node has a leading postcss-lit-disable comment
  * @param {NodePath<CallExpression>} path NodePath to test
+ * @param {SyntaxOptions} options Syntax options
  * @return {boolean}
  */
-export function hasDisableComment(path: NodePath<CallExpression>): boolean {
+export function hasDisableComment(
+  path: NodePath<CallExpression>,
+  options: SyntaxOptions,
+): boolean {
   const statement = path.getStatementParent();
   if (statement?.node.leadingComments) {
     const comment =
       statement.node.leadingComments[statement.node.leadingComments.length - 1];
-    if (comment !== undefined && isDisableComment(comment)) {
+    if (comment !== undefined && isDisableComment(comment, options)) {
       return true;
     }
   }
@@ -34,6 +44,10 @@ if (import.meta.vitest) {
   const { parseScript } = await import("./utils");
   const { describe, it, expect } = import.meta.vitest;
 
+  const opts: SyntaxOptions = {
+    id: "vanilla-extract",
+  };
+
   describe("comment", () => {
     describe("isDisableComment", () => {
       it("should be true for disable comments", () => {
@@ -43,7 +57,7 @@ if (import.meta.vitest) {
         `);
         const comment = ast.comments![0]!;
 
-        expect(isDisableComment(comment)).toBe(true);
+        expect(isDisableComment(comment, opts)).toBe(true);
       });
       it("should be false for unrelated comments", () => {
         const ast = parseScript(dedent`\
@@ -52,7 +66,7 @@ if (import.meta.vitest) {
         `);
         const comment = ast.comments![0]!;
 
-        expect(isDisableComment(comment)).toBe(false);
+        expect(isDisableComment(comment, opts)).toBe(false);
       });
     });
     describe("hasDisableComment", () => {
@@ -68,7 +82,7 @@ if (import.meta.vitest) {
           },
         });
 
-        expect(hasDisableComment(path!)).toBe(true);
+        expect(hasDisableComment(path!, opts)).toBe(true);
       });
       it("should be false if no comments", () => {
         const ast = parseScript(dedent`\
@@ -84,7 +98,7 @@ if (import.meta.vitest) {
         });
 
         expect(paths.length).toBe(1);
-        expect(paths.every((p) => hasDisableComment(p))).toBe(false);
+        expect(paths.every((p) => hasDisableComment(p, opts))).toBe(false);
       });
       it("should be false if unrelated comments", () => {
         const ast = parseScript(dedent`\
@@ -101,7 +115,7 @@ if (import.meta.vitest) {
         });
 
         expect(paths.length).toBe(1);
-        expect(paths.every((p) => hasDisableComment(p))).toBe(false);
+        expect(paths.every((p) => hasDisableComment(p, opts))).toBe(false);
       });
     });
   });
