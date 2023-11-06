@@ -6,12 +6,18 @@ import pkg from "./package.json" assert { type: "json" };
 const externals = [
   ...Object.keys(pkg.dependencies),
   ...Object.keys(pkg.devDependencies),
+  ...Object.keys(pkg.peerDependencies),
 ];
 
 /** @type {import('rollup').RollupOptions} */
 const options = {
   input: "src/index.ts",
   output: [
+    {
+      file: pkg.module,
+      format: "es",
+      sourcemap: false,
+    },
     {
       file: pkg.main,
       format: "cjs",
