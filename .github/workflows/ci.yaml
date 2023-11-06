@@ -22,32 +22,32 @@ jobs:
   #        uses: re-taro/actions/turbo-cache@v3.4.1
   #      - name: Build test
   #        run: pnpm build
-  #  lint:
-  #    runs-on: ubuntu-latest
-  #    timeout-minutes: 15
-  #    steps:
-  #      - uses: actions/checkout@v4.1.1
-  #      - name: Setup Node.js
-  #        uses: re-taro/actions/setup-node@v3.4.1
-  #        with:
-  #          node-version-file: .tool-versions
-  #      - name: Use turborepo cache
-  #        uses: re-taro/actions/turbo-cache@v3.4.1
-  #      - name: Lint test
-  #        run: pnpm lint
-  #  test:
-  #    runs-on: ubuntu-latest
-  #    timeout-minutes: 15
-  #    steps:
-  #      - uses: actions/checkout@v4.1.1
-  #      - name: Setup Node.js
-  #        uses: re-taro/actions/setup-node@v3.4.1
-  #        with:
-  #          node-version-file: .tool-versions
-  #      - name: Use turborepo cache
-  #        uses: re-taro/actions/turbo-cache@v3.4.1
-  #      - name: Unit test
-  #        run: pnpm test
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4.1.1
+      - name: Setup Node.js
+        uses: re-taro/actions/setup-node@v3.4.1
+        with:
+          node-version-file: .tool-versions
+      - name: Use turborepo cache
+        uses: re-taro/actions/turbo-cache@v3.4.1
+      - name: Lint test
+        run: pnpm lint
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4.1.1
+      - name: Setup Node.js
+        uses: re-taro/actions/setup-node@v3.4.1
+        with:
+          node-version-file: .tool-versions
+      - name: Use turborepo cache
+        uses: re-taro/actions/turbo-cache@v3.4.1
+      - name: Unit test
+        run: pnpm test
   changeset-test:
     runs-on: ubuntu-latest
     timeout-minutes: 15
