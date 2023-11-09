@@ -29,6 +29,8 @@ jobs:
       - name: Create Release Pull Request
         id: changesets
         uses: changesets/action@v1.4.5
+        with:
+          setupGitUser: false
         env:
           GITHUB_TOKEN: ${{ steps.bot.outputs.token }}
       - name: Revoke GitHub Apps token
