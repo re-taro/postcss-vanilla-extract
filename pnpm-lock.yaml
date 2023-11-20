@@ -51,8 +51,8 @@ importers:
   packages/postcss-vanilla-extract:
     dependencies:
       '@babel/parser':
-        specifier: 7.23.3
-        version: 7.23.3
+        specifier: 7.23.4
+        version: 7.23.4
       '@babel/traverse':
         specifier: 7.23.3
         version: 7.23.3
@@ -137,12 +137,12 @@ packages:
       chalk: 2.4.2
       js-tokens: 4.0.0
 
-  /@babel/parser@7.23.3:
-    resolution: {integrity: sha512-uVsWNvlVsIninV2prNz/3lHCb+5CJ+e+IUBfbjToAHODtfGYLfCFuY4AU7TskI+dAKk+njsPiBjq1gKTvZOBaw==}
+  /@babel/parser@7.23.4:
+    resolution: {integrity: sha512-vf3Xna6UEprW+7t6EtOmFpHNAuxw3xqPZghy+brsnusscJRW5BMUzzHZc5ICjULee81WeUV2jjakG09MDglJXQ==}
     engines: {node: '>=6.0.0'}
     hasBin: true
     dependencies:
-      '@babel/types': 7.23.0
+      '@babel/types': 7.23.3
     dev: false
 
   /@babel/runtime@7.23.2:
@@ -157,7 +157,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/code-frame': 7.22.13
-      '@babel/parser': 7.23.3
+      '@babel/parser': 7.23.4
       '@babel/types': 7.23.3
     dev: false
 
@@ -171,21 +171,12 @@ packages:
       '@babel/helper-function-name': 7.23.0
       '@babel/helper-hoist-variables': 7.22.5
       '@babel/helper-split-export-declaration': 7.22.6
-      '@babel/parser': 7.23.3
+      '@babel/parser': 7.23.4
       '@babel/types': 7.23.3
       debug: 4.3.4
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
-    dev: false
-
-  /@babel/types@7.23.0:
-    resolution: {integrity: sha512-0oIyUfKoI3mSqMvsxBdclDwxXKXAUA8v/apZbc+iSyARYou1o8ZGDxbUYyLFoW2arqS2jDGqJuZvv1d/io1axg==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      '@babel/helper-string-parser': 7.22.5
-      '@babel/helper-validator-identifier': 7.22.20
-      to-fast-properties: 2.0.0
     dev: false
 
   /@babel/types@7.23.3:
