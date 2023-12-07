@@ -54,18 +54,18 @@ if (import.meta.vitest) {
 		describe("isDisableComment", () => {
 			it("should be true for disable comments", () => {
 				const ast = parseScript(dedent`\
-          // postcss-vanilla-extract-disable-next-line
-          const foo = style({});
-        `);
+					// postcss-vanilla-extract-disable-next-line
+					const foo = style({});
+				`);
 				const comment = ast.comments![0]!;
 
 				expect(isDisableComment(comment, opts)).toBe(true);
 			});
 			it("should be false for unrelated comments", () => {
 				const ast = parseScript(dedent`\
-          // totally unrelated
-          const foo = style({});
-        `);
+					// totally unrelated
+					const foo = style({});
+				`);
 				const comment = ast.comments![0]!;
 
 				expect(isDisableComment(comment, opts)).toBe(false);
@@ -74,9 +74,9 @@ if (import.meta.vitest) {
 		describe("hasDisableComment", () => {
 			it("should be true when disable comment exists", () => {
 				const ast = parseScript(dedent`\
-          // postcss-vanilla-extract-disable-next-line
-          const foo = style({});
-        `);
+					// postcss-vanilla-extract-disable-next-line
+					const foo = style({});
+				`);
 				let path: NodePath<CallExpression> | undefined;
 				traverse(ast, {
 					CallExpression: (p) => {
@@ -88,10 +88,10 @@ if (import.meta.vitest) {
 			});
 			it("should be false if no comments", () => {
 				const ast = parseScript(dedent`\
-          const foo = style({
-            display: 'flex'
-          });
-        `);
+					const foo = style({
+				  	display: 'flex'
+					});
+				`);
 				const paths: NodePath<CallExpression>[] = [];
 				traverse(ast, {
 					CallExpression: (p) => {
@@ -104,11 +104,11 @@ if (import.meta.vitest) {
 			});
 			it("should be false if unrelated comments", () => {
 				const ast = parseScript(dedent`\
-          // some other comment
-          const foo = style({
-            display: 'flex'
-          });
-        `);
+					// some other comment
+					const foo = style({
+						display: 'flex'
+					});
+				`);
 				const paths: NodePath<CallExpression>[] = [];
 				traverse(ast, {
 					CallExpression: (p) => {
