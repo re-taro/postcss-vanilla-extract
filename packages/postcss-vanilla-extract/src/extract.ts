@@ -80,11 +80,11 @@ if (import.meta.vitest) {
 			});
 			it("should detect call expr", () => {
 				const source = dedent`\
-          const scopedVar = createVar();
-          export const flexContainer = style({
-            display: 'flex'
-          });
-        `;
+					const scopedVar = createVar();
+					export const flexContainer = style({
+						display: 'flex'
+					});
+				`;
 				const result = extractCallExprFromSource(source, {
 					id: "foo",
 					names: ["style"],
@@ -94,13 +94,13 @@ if (import.meta.vitest) {
 			});
 			it("should parse typescript", () => {
 				const source = dedent`\
-          export const accentVar: CSSVarFunction = createVar();
+					export const accentVar: CSSVarFunction = createVar();
 
-          export const blue = style({
-            vars: {
-              [accentVar]: 'blue'
-            }
-          });
+					export const blue = style({
+				  	vars: {
+				  		[accentVar]: 'blue'
+				  	}
+					});
         `;
 				const result = extractCallExprFromSource(source, {
 					id: "foo",
@@ -111,11 +111,11 @@ if (import.meta.vitest) {
 			});
 			it("should respect disable comments", () => {
 				const source = dedent`\
-          // postcss-foo-disable-next-line
-          export const flexContainer = style({
-            display: 'flex'
-          });
-        `;
+					// postcss-foo-disable-next-line
+					export const flexContainer = style({
+						display: 'flex'
+					});
+				`;
 				const result = extractCallExprFromSource(source, {
 					id: "foo",
 					names: ["style"],
