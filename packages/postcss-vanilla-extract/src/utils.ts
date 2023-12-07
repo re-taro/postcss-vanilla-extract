@@ -3,14 +3,15 @@ import type { File } from "@babel/types";
 
 /**
  * Parses some javascript/typescript via babel
+ *
  * @param {string} source Source to parse
- * @return {File}
+ * @returns {File}
  */
 export function parseScript(source: string): File {
-  const ast = babelParse(source, {
-    sourceType: "unambiguous",
-    ranges: true,
-  });
+	const ast = babelParse(source, {
+		sourceType: "unambiguous",
+		ranges: true,
+	});
 
-  return ast;
+	return ast;
 }

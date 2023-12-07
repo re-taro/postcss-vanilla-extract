@@ -1,4 +1,4 @@
 export interface SyntaxOptions {
-  id: string;
-  names?: string[];
+	id: string;
+	names?: string[];
 }
