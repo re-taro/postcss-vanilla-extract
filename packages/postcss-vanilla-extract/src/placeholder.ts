@@ -1,8 +1,16 @@
 import type { NodePath } from "@babel/traverse";
 
-import type { PlaceholderFunc, Position, SyntaxOptions } from "./types";
+import type { PlaceholderFunc, SyntaxOptions } from "./types";
 
 const whitespacePattern = /\s/;
+
+type Position =
+	| "block"
+	| "statement"
+	| "default"
+	| "selector"
+	| "property"
+	| "comment";
 
 type PlaceholderFuncWithSyntax = (key: number, syntaxId: string) => string;
 
