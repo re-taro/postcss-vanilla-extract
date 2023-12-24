@@ -6,14 +6,6 @@ export interface SyntaxOptions {
 	placeholder?: PlaceholderFunc;
 }
 
-export type Position =
-	| "block"
-	| "statement"
-	| "default"
-	| "selector"
-	| "property"
-	| "comment";
-
 export type PlaceholderFunc = (
 	key: number,
 	node: NodePath,

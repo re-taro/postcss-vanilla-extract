@@ -52,11 +52,11 @@ function parseStyles(
  */
 export const createParser =
 	(options: SyntaxOptions): Parser =>
-		(
-			css: string | { toString: () => string },
-			opts?: Pick<ProcessOptions, "map" | "from">,
-		) => {
-			const source = typeof css === "string" ? css : css.toString();
+	(
+		css: string | { toString: () => string },
+		opts?: Pick<ProcessOptions, "map" | "from">,
+	) => {
+		const source = typeof css === "string" ? css : css.toString();
 
-			return parseStyles(source, options, opts);
-		};
+		return parseStyles(source, options, opts);
+	};
