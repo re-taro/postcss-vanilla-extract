@@ -1,60 +1,61 @@
 {
-  "name": "@re-taro/postcss-vanilla-extract",
-  "description": "PostCSS custom syntax for vanilla-extract",
-  "version": "0.0.0",
-  "packageManager": "pnpm@8.12.0",
-  "license": "MIT",
-  "author": {
-    "name": "Rintaro Itokawa",
-    "email": "me@re-taro.dev",
-    "url": "https://re-taro.dev"
-  },
-  "homepage": "https://github.com/re-taro/postcss-vanilla-extract#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/re-taro/postcss-vanilla-extract.git",
-    "directory": "packages/postcss-vanilla-extract"
-  },
-  "bugs": {
-    "url": "https://github.com/re-taro/postcss-vanilla-extract/issues"
-  },
-  "keywords": [
-    "postcss",
-    "vanilla-extract",
-    "custom-syntax"
-  ],
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
-    }
-  },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "sideEffects": false,
-  "files": [
-    "dist"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "build": "rollup -c",
-    "lint": "eslint . && prettier . --check && tsc --noEmit",
-    "fmt": "eslint . --fix && prettier . --write",
-    "test": "vitest"
-  },
-  "dependencies": {
-    "@babel/parser": "7.23.6",
-    "@babel/traverse": "7.23.7"
-  },
-  "peerDependencies": {
-    "postcss": "^8.4.21"
-  },
-  "devDependencies": {
-    "@babel/types": "7.23.0",
-    "@types/babel__traverse": "7.20.3"
-  }
+	"name": "@re-taro/postcss-vanilla-extract",
+	"version": "0.0.0",
+	"packageManager": "pnpm@8.12.0",
+	"author": "Rintaro Itokawa <me@re-taro.dev> (https://re-taro.dev)",
+	"description": "PostCSS custom syntax for vanilla-extract",
+	"keywords": [
+		"custom-syntax",
+		"postcss",
+		"vanilla-extract"
+	],
+	"homepage": "https://github.com/re-taro/postcss-vanilla-extract#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/re-taro/postcss-vanilla-extract.git",
+		"directory": "packages/postcss-vanilla-extract"
+	},
+	"bugs": {
+		"url": "https://github.com/re-taro/postcss-vanilla-extract/issues"
+	},
+	"license": "MIT",
+	"sideEffects": false,
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"require": "./dist/index.cjs",
+			"import": "./dist/index.mjs"
+		}
+	},
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "rollup -c",
+		"fmt": "run-s -c fmt:*",
+		"fmt:eslint": "pnpm lint:eslint --fix",
+		"fmt:prettier": "prettier . -w",
+		"lint": "run-p -c lint:*",
+		"lint:eslint": "eslint .",
+		"lint:prettier": "prettier . -c",
+		"lint:ts": "tsc -p . --noEmit",
+		"test": "vitest"
+	},
+	"dependencies": {
+		"@babel/parser": "7.23.6",
+		"@babel/traverse": "7.23.7"
+	},
+	"devDependencies": {
+		"@babel/types": "7.23.0",
+		"@types/babel__traverse": "7.20.3"
+	},
+	"peerDependencies": {
+		"postcss": "^8.4.21"
+	}
 }
