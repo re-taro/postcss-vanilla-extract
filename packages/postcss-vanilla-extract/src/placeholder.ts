@@ -147,40 +147,48 @@ if (import.meta.vitest) {
 		describe("computePossiblePosition", () => {
 			it("should use default when empty", () => {
 				const result = computePossiblePosition("");
+
 				expect(result).toBe("default");
 			});
 			it("should be statement if semi-colon encountered", () => {
 				const result = computePossiblePosition(
 					"const base = style({ padding: 0,",
 				);
+
 				expect(result).toBe("statement");
 			});
 			it("should be default if colon encountered", () => {
 				const result = computePossiblePosition("const base = style({ padding:");
+
 				expect(result).toBe("default");
 			});
 			it("should be block if closing paren encountered", () => {
 				const result = computePossiblePosition(
 					"const base = style({ vars: { }",
 				);
+
 				expect(result).toBe("block");
 			});
 			it("should be statement if opening paren encountered", () => {
 				const result = computePossiblePosition("const base = style({");
+
 				expect(result).toBe("statement");
 			});
 			it("should handle spaces after prefix", () => {
 				const result = computePossiblePosition("const base = style({ ");
+
 				expect(result).toBe("statement");
 			});
 			it("should be comment if opening comment encountered", () => {
 				const result = computePossiblePosition("const base = style({ /* foo");
+
 				expect(result).toBe("comment");
 			});
 			it("should ignore key chars inside comments", () => {
 				const result = computePossiblePosition(
 					"const base = style({ /* tricky } comment */",
 				);
+
 				expect(result).toBe("statement");
 			});
 			it("should handle block position with suffix", () => {
@@ -188,6 +196,7 @@ if (import.meta.vitest) {
 					"const base = style({ vars: { }",
 					"const other = style({ vars: { }",
 				);
+
 				expect(result).toBe("block");
 			});
 			it("should be selector if suffix is open paren & prefix is block", () => {
@@ -195,6 +204,7 @@ if (import.meta.vitest) {
 					"const base = style({ vars: { }",
 					"{",
 				);
+
 				expect(result).toBe("selector");
 			});
 			it("should handle spaces before suffix", () => {
@@ -202,6 +212,7 @@ if (import.meta.vitest) {
 					"const base = style({ vars: { }",
 					" {",
 				);
+
 				expect(result).toBe("selector");
 			});
 			it("should be statement if suffix is colon & prefix is statement", () => {
@@ -209,6 +220,7 @@ if (import.meta.vitest) {
 					"const base = style({ ",
 					": 0 }",
 				);
+
 				expect(result).toBe("property");
 			});
 		});
@@ -230,11 +242,13 @@ if (import.meta.vitest) {
 			});
 			it("should use default placeholder if no prefix", () => {
 				const result = createPlaceholder(808, nodes[0]);
+
 				expect(result).toBe("POSTCSS_foo_808");
 			});
 			describe("default positions", () => {
 				it("should use default placeholder", () => {
 					const result = createPlaceholder(808, nodes[0], "/* some comment */");
+
 					expect(result).toBe("POSTCSS_foo_808");
 				});
 			});
@@ -246,18 +260,21 @@ if (import.meta.vitest) {
 						"const foo = style({ vars: {}",
 						"{}",
 					);
+
 					expect(result).toBe("POSTCSS_foo_808");
 				});
 			});
 			describe("comment positions", () => {
 				it("should use default placeholder", () => {
 					const result = createPlaceholder(808, nodes[0], "/* foo ", " bar */");
+
 					expect(result).toBe("POSTCSS_foo_808");
 				});
 			});
 			describe("statement positions", () => {
 				it("should use a comment placeholder", () => {
 					const result = createPlaceholder(808, nodes[0], "color: blue,");
+
 					expect(result).toBe("/* POSTCSS_foo_808 */");
 				});
 			});
@@ -268,6 +285,7 @@ if (import.meta.vitest) {
 						nodes[0],
 						"const foo = style({ vars: {}",
 					);
+
 					expect(result).toBe("/* POSTCSS_foo_808 */");
 				});
 			});
@@ -279,6 +297,7 @@ if (import.meta.vitest) {
 						"const foo = style({ vars: {",
 						": blue }",
 					);
+
 					expect(result).toBe("--POSTCSS_foo_808");
 				});
 			});
