@@ -3,6 +3,7 @@ import { Document, Input } from "postcss";
 
 import { extractCallExprFromSource } from "./extract";
 import { createPlaceholderFunc } from "./placeholder";
+import { computeReplacedSource } from "./replace";
 import type { SyntaxOptions } from "./types";
 
 /**
@@ -25,11 +26,11 @@ function parseStyles(
 	const doc = new Document();
 
 	for (const path of extractedStyles) {
-		const args = path.get("arguments")[0];
-
-		if (!args.node.range) {
-			continue;
-		}
+		const replacedSource = computeReplacedSource(
+			source,
+			path,
+			computePlaceholder,
+		);
 	}
 
 	doc.source = {
