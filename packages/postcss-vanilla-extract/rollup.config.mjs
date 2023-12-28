@@ -1,15 +1,28 @@
+// @ts-check
+
 import terser from "@rollup/plugin-terser";
 import typescript from "@rollup/plugin-typescript";
 import replace from "@rollup/plugin-replace";
+import cjs from "@rollup/plugin-commonjs";
+import nodeResolve from "@rollup/plugin-node-resolve";
+import outputSize, { summarize } from "rollup-plugin-output-size";
+import { dedent } from "@qnighy/dedent";
 
 import pkg from "./package.json" assert { type: "json" };
 
-const externals = [
+const external = [
 	...Object.keys(pkg.dependencies),
-	...Object.keys(pkg.devDependencies),
 	...Object.keys(pkg.peerDependencies),
-	"@qnighy/dedent",
 ];
+
+// ライセンス表記用のバナー
+const banner = dedent`\
+  /**
+   * @license
+   * ${pkg.name} v${pkg.version}
+   * Released under the ${pkg.license} License.
+   */
+`;
 
 /**
  * @type {import("rollup").RollupOptions}
@@ -18,28 +31,46 @@ const options = {
 	input: "src/index.ts",
 	output: [
 		{
-			file: pkg.module,
+			file: pkg.exports["."].import,
 			format: "es",
+			banner,
 			sourcemap: false,
 		},
 		{
-			file: pkg.main,
+			file: pkg.exports["."].require,
 			format: "cjs",
+			banner,
 			sourcemap: false,
 		},
 	],
-	external: (id) => externals.some((d) => id.startsWith(d)),
+	external,
 	plugins: [
+		cjs(),
+		nodeResolve({ browser: false }),
 		typescript({
-			tsconfig: "./tsconfig.json",
-			outDir: ".",
 			declaration: true,
+			rootDir: "src",
+			outDir: "dist",
+			emitDeclarationOnly: true,
 		}),
 		replace({
-			"import.meta.vitest": "undefined",
+			values: {
+				"process.env.NODE_ENV": JSON.stringify("production"),
+				"import.meta.env.NODE_ENV": JSON.stringify("production"),
+				"import.meta.vitest": "undefined",
+			},
 			preventAssignment: true,
 		}),
-		terser(),
+		terser({
+			compress: {
+				passes: 5,
+			},
+		}),
+		outputSize({
+			summary(summary) {
+				console.log(summarize(summary));
+			},
+		}),
 	],
 };
 
