@@ -1,6 +1,7 @@
 import generate from "@babel/generator";
 import type { NodePath } from "@babel/traverse";
 import type { CallExpression, ObjectExpression } from "@babel/types";
+import { kebabCase } from "scule";
 
 import type { PlaceholderFunc, SyntaxOptions } from "./types";
 
@@ -41,6 +42,10 @@ export function computeReplacedSource(
 		const prop = props[i];
 
 		if (prop.isObjectProperty()) {
+			if (prop.node.key.type === "Identifier") {
+				prop.node.key.name = kebabCase(prop.node.key.name);
+			}
+
 			if (prop.node.value.type === "ObjectExpression") {
 				const placeholder = computePlaceholder(
 					i,
@@ -56,8 +61,8 @@ export function computeReplacedSource(
 			} else {
 				result.result +=
 					i < props.length - 1
-						? `${generate(prop.node, {}, "").code},\n`
-						: generate(prop.node, {}, "").code;
+						? `${generate(prop.node, {}, "").code};\n`
+						: `${generate(prop.node, {}, "").code};`;
 			}
 		}
 	}
@@ -92,7 +97,25 @@ if (import.meta.vitest) {
 
 			expect(result).toStrictEqual<SourceReplacementResult[]>([
 				{
-					result: "padding: 12",
+					result: "padding: 12;",
+					replacements: [],
+				},
+			]);
+		});
+		it("should replace camelCase keys with kebab-case", () => {
+			const source = dedent`\
+				const base = style({
+					paddingTop: 12,
+					paddingLeft: 12,
+				});
+			`;
+			const result = sourceToReplacements(source);
+
+			expect(result).toStrictEqual<SourceReplacementResult[]>([
+				{
+					result: dedent`\
+						padding-top: 12;
+						padding-left: 12;`,
 					replacements: [],
 				},
 			]);
@@ -130,7 +153,7 @@ if (import.meta.vitest) {
 			expect(result).toStrictEqual<SourceReplacementResult[]>([
 				{
 					result: dedent`\
-            display: 'flex',
+            display: 'flex';
             /* POSTCSS_foo_1 */
             /* POSTCSS_foo_2 */
             /* POSTCSS_foo_3 */
