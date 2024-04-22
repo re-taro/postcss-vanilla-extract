@@ -23,7 +23,7 @@
     "@rollup/plugin-replace": "5.0.5",
     "@rollup/plugin-terser": "0.4.4",
     "@rollup/plugin-typescript": "11.1.6",
-    "eslint": "9.1.0",
+    "eslint": "9.1.1",
     "prettier": "3.2.5",
     "rollup": "4.16.2",
     "terser": "5.30.4",
