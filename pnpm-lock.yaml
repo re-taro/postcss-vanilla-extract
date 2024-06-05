@@ -18,8 +18,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0(eslint@9.4.0)(typescript@5.4.5)(vitest@1.6.0)
       '@rollup/plugin-replace':
-        specifier: 5.0.5
-        version: 5.0.5(rollup@4.18.0)
+        specifier: 5.0.6
+        version: 5.0.6(rollup@4.18.0)
       '@rollup/plugin-terser':
         specifier: 0.4.4
         version: 0.4.4(rollup@4.18.0)
@@ -888,8 +888,8 @@ packages:
       eslint: 9.4.0
     dev: true
 
-  /@rollup/plugin-replace@5.0.5(rollup@4.18.0):
-    resolution: {integrity: sha512-rYO4fOi8lMaTg/z5Jb+hKnrHHVn8j2lwkqwyS4kTRhKyWOLf2wST2sWXr4WzWiTcoHTp2sTjqUbqIj2E39slKQ==}
+  /@rollup/plugin-replace@5.0.6(rollup@4.18.0):
+    resolution: {integrity: sha512-n/Eea4MuS38M5iT+0nz7UzSbI4H4hVTKV5hOTAQzNVKT3nYxj8iaG4t9IW86Ugv/jApGY+O+SANAFqWPzZ9xkw==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
@@ -897,8 +897,8 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': 5.0.5(rollup@4.18.0)
-      magic-string: 0.30.5
+      '@rollup/pluginutils': 5.1.0(rollup@4.18.0)
+      magic-string: 0.30.7
       rollup: 4.18.0
     dev: true
 
@@ -934,21 +934,6 @@ packages:
       resolve: 1.22.8
       rollup: 4.18.0
       typescript: 5.4.5
-    dev: true
-
-  /@rollup/pluginutils@5.0.5(rollup@4.18.0):
-    resolution: {integrity: sha512-6aEYR910NyP73oHiJglti74iRyOwgFU4x3meH/H8OJx6Ry0j6cOVZ5X/wTvub7G7Ao6qaHBEaNsV3GLJkSsF+Q==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
-    peerDependenciesMeta:
-      rollup:
-        optional: true
-    dependencies:
-      '@types/estree': 1.0.5
-      estree-walker: 2.0.2
-      picomatch: 2.3.1
-      rollup: 4.18.0
     dev: true
 
   /@rollup/pluginutils@5.1.0(rollup@4.18.0):
@@ -3451,13 +3436,6 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       yallist: 4.0.0
-    dev: true
-
-  /magic-string@0.30.5:
-    resolution: {integrity: sha512-7xlpfBaQaP/T6Vh8MO/EqXSW5En6INHEvEXQiuff7Gku0PWjU3uf6w/j9o7O+SpB5fOAkrI5HeoNgwjEO0pFsA==}
-    engines: {node: '>=12'}
-    dependencies:
-      '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
 
   /magic-string@0.30.7:
