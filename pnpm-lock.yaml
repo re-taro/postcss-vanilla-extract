@@ -54,8 +54,8 @@ importers:
         specifier: 7.25.3
         version: 7.25.3
       '@babel/traverse':
-        specifier: 7.25.2
-        version: 7.25.2
+        specifier: 7.25.3
+        version: 7.25.3
 
 packages:
 
@@ -137,8 +137,8 @@ packages:
       '@babel/types': 7.25.2
     dev: false
 
-  /@babel/traverse@7.25.2:
-    resolution: {integrity: sha512-s4/r+a7xTnny2O6FcZzqgT6nE4/GHEdcqj4qAeglbUOh0TeglEfmNJFAd/OLoVtGd6ZhAO8GCVvCNUO5t/VJVQ==}
+  /@babel/traverse@7.25.3:
+    resolution: {integrity: sha512-HefgyP1x754oGCsKmV5reSmtV7IXj/kpaE1XYY+D9G5PvKKoFfSbiS4M77MdjuwlZKDIKFCffq9rPU+H/s3ZdQ==}
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/code-frame': 7.24.7
