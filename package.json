@@ -26,7 +26,7 @@
     "eslint": "9.8.0",
     "prettier": "3.3.3",
     "rollup": "4.20.0",
-    "terser": "5.31.4",
+    "terser": "5.31.5",
     "turbo": "2.0.12",
     "typescript": "5.5.4",
     "vitest": "2.0.5"
