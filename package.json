@@ -29,6 +29,6 @@
     "terser": "5.32.0",
     "turbo": "2.1.2",
     "typescript": "5.6.2",
-    "vitest": "2.1.0"
+    "vitest": "2.1.1"
   }
 }
