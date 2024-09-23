@@ -22,7 +22,7 @@
     "@re-taro/eslint-config": "5.2.0",
     "@rollup/plugin-replace": "5.0.7",
     "@rollup/plugin-terser": "0.4.4",
-    "@rollup/plugin-typescript": "11.1.6",
+    "@rollup/plugin-typescript": "12.1.0",
     "eslint": "9.11.0",
     "prettier": "3.3.3",
     "rollup": "4.22.4",
