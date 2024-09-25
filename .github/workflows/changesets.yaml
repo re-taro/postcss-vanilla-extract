@@ -15,7 +15,7 @@ jobs:
     outputs:
       released: ${{ steps.changesets.outputs.published }}
     steps:
-      - uses: actions/checkout@v4.1.7
+      - uses: actions/checkout@v4.2.0
       - name: Setup Node.js
         uses: re-taro/actions/setup-node@v3.6.0
         with:
