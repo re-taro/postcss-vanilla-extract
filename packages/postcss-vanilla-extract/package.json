@@ -2,7 +2,7 @@
   "name": "@re-taro/postcss-vanilla-extract",
   "description": "PostCSS custom syntax for vanilla-extract",
   "version": "0.0.0",
-  "packageManager": "pnpm@8.12.0",
+  "packageManager": "pnpm@8.12.1",
   "license": "MIT",
   "author": {
     "name": "Rintaro Itokawa",
