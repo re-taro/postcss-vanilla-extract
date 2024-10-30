@@ -51,8 +51,8 @@ importers:
   packages/postcss-vanilla-extract:
     dependencies:
       '@babel/parser':
-        specifier: 7.26.1
-        version: 7.26.1
+        specifier: 7.26.2
+        version: 7.26.2
       '@babel/traverse':
         specifier: 7.25.9
         version: 7.25.9
@@ -126,8 +126,8 @@ packages:
       picocolors: 1.1.0
     dev: false
 
-  /@babel/parser@7.26.1:
-    resolution: {integrity: sha512-reoQYNiAJreZNsJzyrDNzFQ+IQ5JFiIzAHJg9bn94S3l+4++J7RsIhNMoB+lgP/9tpmiAQqspv+xfdxTSzREOw==}
+  /@babel/parser@7.26.2:
+    resolution: {integrity: sha512-DWMCZH9WA4Maitz2q21SRKHo9QXZxkDsbNZoVD62gusNtNBBqDg9i7uOhASfTfIGNzW+O+r7+jAlM8dwphcJKQ==}
     engines: {node: '>=6.0.0'}
     hasBin: true
     dependencies:
@@ -146,7 +146,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/code-frame': 7.25.9
-      '@babel/parser': 7.26.1
+      '@babel/parser': 7.26.2
       '@babel/types': 7.26.0
     dev: false
 
@@ -156,7 +156,7 @@ packages:
     dependencies:
       '@babel/code-frame': 7.25.9
       '@babel/generator': 7.25.9
-      '@babel/parser': 7.26.1
+      '@babel/parser': 7.26.2
       '@babel/template': 7.25.9
       '@babel/types': 7.25.9
       debug: 4.3.7
