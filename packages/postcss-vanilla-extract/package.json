@@ -44,7 +44,7 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@babel/parser": "7.26.8",
-    "@babel/traverse": "7.26.8"
+    "@babel/parser": "7.26.9",
+    "@babel/traverse": "7.26.9"
   }
 }
