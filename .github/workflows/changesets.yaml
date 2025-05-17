@@ -28,7 +28,7 @@ jobs:
           private_key: ${{ secrets.PRIVATE_KEY}}
       - name: Create Release Pull Request
         id: changesets
-        uses: changesets/action@v1.5.2
+        uses: changesets/action@v1.5.3
         env:
           GITHUB_TOKEN: ${{ steps.bot.outputs.token }}
       - name: Revoke GitHub Apps token
