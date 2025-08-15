@@ -27,7 +27,7 @@
     "prettier": "3.6.2",
     "rollup": "4.46.2",
     "terser": "5.43.1",
-    "turbo": "2.5.5",
+    "turbo": "2.5.6",
     "typescript": "5.9.2",
     "vitest": "2.1.9"
   }
