@@ -24,8 +24,8 @@ importers:
         specifier: 0.4.4
         version: 0.4.4(rollup@4.52.5)
       '@rollup/plugin-typescript':
-        specifier: 12.2.0
-        version: 12.2.0(rollup@4.52.5)(typescript@5.9.3)
+        specifier: 12.3.0
+        version: 12.3.0(rollup@4.52.5)(typescript@5.9.3)
       eslint:
         specifier: 9.38.0
         version: 9.38.0
@@ -1042,8 +1042,8 @@ packages:
       terser: 5.44.0
     dev: true
 
-  /@rollup/plugin-typescript@12.2.0(rollup@4.52.5)(typescript@5.9.3):
-    resolution: {integrity: sha512-g7krmoYCaNhL/jSF1wCYiiUNsWPTj0HwcPDnxIyaonxsQIVp/jc08muGpSz+eGGK+0ajHfl8tpf1lahHXSOF7Q==}
+  /@rollup/plugin-typescript@12.3.0(rollup@4.52.5)(typescript@5.9.3):
+    resolution: {integrity: sha512-7DP0/p7y3t67+NabT9f8oTBFE6gGkto4SA6Np2oudYmZE/m1dt8RB0SjL1msMxFpLo631qjRCcBlAbq1ml/Big==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^2.14.0||^3.0.0||^4.0.0
