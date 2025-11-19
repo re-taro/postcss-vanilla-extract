@@ -24,7 +24,7 @@ jobs:
             url: https://npm.pkg.github.com/
     steps:
       - name: Setup | Checkout
-        uses: actions/checkout@v4.3.0
+        uses: actions/checkout@v4.3.1
       - name: Setup | Node.js
         uses: re-taro/actions/setup-node@v3.7.9
         with:
