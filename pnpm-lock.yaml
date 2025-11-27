@@ -30,8 +30,8 @@ importers:
         specifier: 9.39.1
         version: 9.39.1
       prettier:
-        specifier: 3.6.2
-        version: 3.6.2
+        specifier: 3.7.0
+        version: 3.7.0
       rollup:
         specifier: 4.53.3
         version: 4.53.3
@@ -3312,8 +3312,8 @@ packages:
     hasBin: true
     dev: true
 
-  /prettier@3.6.2:
-    resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
+  /prettier@3.7.0:
+    resolution: {integrity: sha512-pBiBj/gjRY9Qpk1b7cDda6Rbwvkaggos779AHQ0Ek/odwDx6xG6DRBxtnp1QmxbuD7pAO8/SQ8vuhtGv9LoLWA==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
