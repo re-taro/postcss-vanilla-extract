@@ -36,8 +36,8 @@ importers:
         specifier: 4.55.1
         version: 4.55.1
       terser:
-        specifier: 5.44.1
-        version: 5.44.1
+        specifier: 5.46.0
+        version: 5.46.0
       turbo:
         specifier: 2.7.4
         version: 2.7.4
@@ -46,7 +46,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: 2.1.9
-        version: 2.1.9(terser@5.44.1)
+        version: 2.1.9(terser@5.46.0)
 
   packages/postcss-vanilla-extract:
     dependencies:
@@ -1049,7 +1049,7 @@ packages:
       rollup: 4.55.1
       serialize-javascript: 6.0.1
       smob: 1.4.1
-      terser: 5.44.1
+      terser: 5.46.0
     dev: true
 
   /@rollup/plugin-typescript@12.3.0(rollup@4.55.1)(typescript@5.9.3):
@@ -1535,7 +1535,7 @@ packages:
       '@typescript-eslint/utils': 8.16.0(eslint@9.39.2)(typescript@5.9.3)
       eslint: 9.39.2
       typescript: 5.9.3
-      vitest: 2.1.9(terser@5.44.1)
+      vitest: 2.1.9(terser@5.46.0)
     dev: true
 
   /@vitest/expect@2.1.9:
@@ -1561,7 +1561,7 @@ packages:
       '@vitest/spy': 2.1.9
       estree-walker: 3.0.3
       magic-string: 0.30.12
-      vite: 5.1.3(terser@5.44.1)
+      vite: 5.1.3(terser@5.46.0)
     dev: true
 
   /@vitest/pretty-format@2.1.9:
@@ -3702,8 +3702,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /terser@5.44.1:
-    resolution: {integrity: sha512-t/R3R/n0MSwnnazuPpPNVO60LX0SKL45pyl9YlvxIdkH0Of7D5qM2EVe+yASRIlY5pZ73nclYJfNANGWPwFDZw==}
+  /terser@5.46.0:
+    resolution: {integrity: sha512-jTwoImyr/QbOWFFso3YoU3ik0jBBDJ6JTOQiy/J2YxVJdZCc+5u7skhNwiOR3FQIygFqVUPHl7qbbxtjW2K3Qg==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
@@ -3902,7 +3902,7 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite-node@2.1.9(terser@5.44.1):
+  /vite-node@2.1.9(terser@5.46.0):
     resolution: {integrity: sha512-AM9aQ/IPrW/6ENLQg3AGY4K1N2TGZdR5e4gu/MmmR2xR3Ll1+dib+nook92g4TV3PXVyeyxdWwtaCAiUL0hMxA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -3911,7 +3911,7 @@ packages:
       debug: 4.4.0
       es-module-lexer: 1.5.4
       pathe: 1.1.2
-      vite: 5.1.3(terser@5.44.1)
+      vite: 5.1.3(terser@5.46.0)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -3923,7 +3923,7 @@ packages:
       - terser
     dev: true
 
-  /vite@5.1.3(terser@5.44.1):
+  /vite@5.1.3(terser@5.46.0):
     resolution: {integrity: sha512-UfmUD36DKkqhi/F75RrxvPpry+9+tTkrXfMNZD+SboZqBCMsxKtO52XeGzzuh7ioz+Eo/SYDBbdb0Z7vgcDJew==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -3954,12 +3954,12 @@ packages:
       esbuild: 0.19.8
       postcss: 8.4.35
       rollup: 4.55.1
-      terser: 5.44.1
+      terser: 5.46.0
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
 
-  /vitest@2.1.9(terser@5.44.1):
+  /vitest@2.1.9(terser@5.46.0):
     resolution: {integrity: sha512-MSmPM9REYqDGBI8439mA4mWhV5sKmDlBKWIYbA3lRb2PTHACE0mgKwA8yQ2xq9vxDTuk4iPrECBAEW2aoFXY0Q==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -4001,8 +4001,8 @@ packages:
       tinyexec: 0.3.1
       tinypool: 1.0.1
       tinyrainbow: 1.2.0
-      vite: 5.1.3(terser@5.44.1)
-      vite-node: 2.1.9(terser@5.44.1)
+      vite: 5.1.3(terser@5.46.0)
+      vite-node: 2.1.9(terser@5.46.0)
       why-is-node-running: 2.3.0
     transitivePeerDependencies:
       - less
