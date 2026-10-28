@@ -24,8 +24,8 @@ importers:
         specifier: 0.4.4
         version: 0.4.4(rollup@4.62.2)
       '@rollup/plugin-typescript':
-        specifier: 12.3.0
-        version: 12.3.0(rollup@4.62.2)(typescript@5.9.3)
+        specifier: 12.3.1
+        version: 12.3.1(rollup@4.62.2)(typescript@5.9.3)
       eslint:
         specifier: 9.39.5
         version: 9.39.5
@@ -1057,8 +1057,8 @@ packages:
       terser: 5.49.0
     dev: true
 
-  /@rollup/plugin-typescript@12.3.0(rollup@4.62.2)(typescript@5.9.3):
-    resolution: {integrity: sha512-7DP0/p7y3t67+NabT9f8oTBFE6gGkto4SA6Np2oudYmZE/m1dt8RB0SjL1msMxFpLo631qjRCcBlAbq1ml/Big==}
+  /@rollup/plugin-typescript@12.3.1(rollup@4.62.2)(typescript@5.9.3):
+    resolution: {integrity: sha512-+dT5iMCxLNOCdaCGvGQpLhBpWdnKlPNMU/hvVLKgQgHuBlRFABi1Y6YxXg7ajqnsHRA53Tkdm3Vu1P+qn9HQ7Q==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^2.14.0||^3.0.0||^4.0.0
@@ -1085,7 +1085,7 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@types/estree': 1.0.8
+      '@types/estree': 1.0.9
       estree-walker: 2.0.2
       picomatch: 2.3.1
       rollup: 4.62.2
@@ -1355,10 +1355,6 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
-
-  /@types/estree@1.0.8:
-    resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
-    dev: true
 
   /@types/estree@1.0.9:
     resolution: {integrity: sha512-GhdPgy1el4/ImP05X05Uw4cw2/M93BCUmnEvWZNStlCzEKME4Fkk+YpoA5OiHNQmoS7Cafb8Xa3Pya8m1Qrzeg==}
